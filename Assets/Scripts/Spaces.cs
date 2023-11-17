@@ -6,6 +6,7 @@ public class Spaces : MonoBehaviour
 {
 
     public bool isFilled;
+    public int colour;
 
     void Start()
     {

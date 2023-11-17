@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DragAndDrop : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class DragAndDrop : MonoBehaviour
     private GameObject stickers;
     private bool isMoving;
     public bool finished;
+    public int colour;
 
     private float startPosX, startPosY; 
 
@@ -51,7 +53,9 @@ public class DragAndDrop : MonoBehaviour
         for (int i = 0; i < 5; i++) {
             checkSpace = spaces.transform.GetChild(i).gameObject;
             if (!checkSpace.GetComponent<Spaces>().isFilled) {
-                if (Mathf.Abs(this.transform.localPosition.x - checkSpace.transform.localPosition.x) <= 0.5f && Mathf.Abs(this.transform.localPosition.y - checkSpace.transform.localPosition.y) <= 0.5f) {
+                if (Mathf.Abs(this.transform.localPosition.x - checkSpace.transform.localPosition.x) <= 0.5f
+                    && Mathf.Abs(this.transform.localPosition.y - checkSpace.transform.localPosition.y) <= 0.5f
+                    && colour == checkSpace.GetComponent<Spaces>().colour) {
                     this.transform.localPosition = new Vector3(checkSpace.transform.localPosition.x, checkSpace.transform.localPosition.y, checkSpace.transform.localPosition.z);
                     checkSpace.GetComponent<Spaces>().isFilled = true;
                     finished = true;
@@ -79,6 +83,8 @@ public class DragAndDrop : MonoBehaviour
 
         if (hasWon) {
             Debug.Log("You win!");
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerData>().score++;
+            SceneManager.LoadScene("StartScene");
         }
     }
 }
