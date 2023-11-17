@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -25,8 +26,8 @@ public class Quiz : MonoBehaviour
     {
         Buttons = new Button[] { option1Button, option2Button, option3Button, option4Button };
 
-        questions.Enqueue(new Question("What is 1+1?", new string[]{ "1", "2", "3", "4" }, 2));
-        questions.Enqueue(new Question("What is 3*3?", new string[] { "3", "6", "9", "12" }, 3));
+        questions.Enqueue(new Question("What will Ahtish ask you about in the call?", new string[]{ "Your dinner", "Your sleep", "School", "Swimming" }, 2));
+        questions.Enqueue(new Question("What is the purpose of this study?", new string[] { "Eat ice cream", "Get a dog", "To help children", "To dance" }, 3));
 
         setQuestion((Question) questions.Dequeue());
     }
@@ -67,8 +68,7 @@ public class Quiz : MonoBehaviour
         }
         else
         {
-            currQuestion = null;
-            Debug.Log("What to do here?");
+            SceneManager.LoadScene(10);
         }
     }
 }
