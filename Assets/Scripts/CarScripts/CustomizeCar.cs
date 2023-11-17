@@ -7,10 +7,13 @@ public class CustomizeCar : MonoBehaviour
 {
     public Button leftButton;
     public Button rightButton;
+    public Button goButton;
     public RawImage carPreview;
     public TMPro.TextMeshProUGUI carName;
     public GameObject selectedCar;
     public GameObject[] carList;
+
+    private IEnumerator coroutine;
     private int index = 0;
 
     void ChangeDetails()
@@ -20,9 +23,72 @@ public class CustomizeCar : MonoBehaviour
         carName.text = "Selected Car: " + selectedCar.GetComponent<Vehicle>().VehicleName;
     }
 
+    private IEnumerator AnimationSequence() {
+        Debug.Log("AnimationSequence");
+
+        GameObject UI = GameObject.Find("UI");
+        GameObject Frame = UI.transform.Find("Frame").gameObject;
+        GameObject AnimatedScene = GameObject.Find("AnimatedScene").gameObject;
+        GameObject Car = AnimatedScene.transform.Find("Car").gameObject;
+        GameObject Background  = AnimatedScene.transform.Find("Background").gameObject;
+        GameObject Road = AnimatedScene.transform.Find("Road").gameObject;
+
+        Debug.Log("Frame: " + Frame);
+        Car.GetComponent<RawImage>().texture = carPreview.texture;
+
+        float t = 1.25f;
+
+        while(t > 0.0f) {
+            Frame.transform.position = new Vector3(Frame.transform.position.x, Frame.transform.position.y + 0.03f, Frame.transform.position.z);
+            t -= Time.deltaTime;
+            yield return null;
+        }
+
+        Debug.Log("Start driving: " + selectedCar.GetComponent<Vehicle>().VehicleName);
+
+        float timer = 14.0f;
+        float seqLength = 3.0f;
+        float outSequence = timer - seqLength;
+
+        float carY = Car.transform.position.y;
+        float speed = 0.01f;
+
+        while(timer > 0.0f) {
+            if(timer > outSequence) {
+                Background.transform.position = new Vector3(Background.transform.position.x - speed, Background.transform.position.y, Background.transform.position.z);
+                speed += Time.deltaTime * 0.01f;
+            }
+            if(timer > outSequence + 2.0f) {
+                Car.transform.position = new Vector3(Car.transform.position.x + speed * 0.7f, Car.transform.position.y, Car.transform.position.z);
+            }
+            if(timer < seqLength) {
+                Background.transform.position = new Vector3(Background.transform.position.x - speed, Background.transform.position.y, Background.transform.position.z);
+                speed -= Time.deltaTime * 0.01f;
+            }
+            if(timer < seqLength - 2.0f) {
+                Car.transform.position = new Vector3(Car.transform.position.x - speed * 0.7f, Car.transform.position.y, Car.transform.position.z);
+            }
+
+            Road.transform.position = new Vector3(Road.transform.position.x - speed, Road.transform.position.y, Road.transform.position.z);
+
+            float dy = Mathf.Sin(timer * 40.0f) * 0.075f;
+            Car.transform.position = new Vector3(Car.transform.position.x, carY + dy, Car.transform.position.z);
+
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+
+        Debug.Log("Done driving");
+
+        yield return new WaitForSeconds(2.5f);
+
+        // go make a button that goes to the next scene / it basically says "enter hospital"
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        goButton.onClick.AddListener(GoOnClick);
         leftButton.onClick.AddListener(LeftOnClick);
         rightButton.onClick.AddListener(RightOnClick);
         ChangeDetails();
@@ -31,6 +97,15 @@ public class CustomizeCar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {}
+
+    void GoOnClick()
+    {
+        if(coroutine == null) {
+            coroutine = AnimationSequence();
+            StartCoroutine(coroutine);
+        }
+        return;
+    }
 
     void LeftOnClick()
     {
