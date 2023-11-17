@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WakeUp.unity
     guid: 867758eff8b1e44a3b79f177f310b778
+  - enabled: 1
+    path: Assets/Scenes/QuizScene.unity
+    guid: 69368c033aed74f7a9cbbc979431225a
   m_configObjects: {}
