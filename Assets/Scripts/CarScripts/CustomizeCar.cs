@@ -8,6 +8,8 @@ public class CustomizeCar : MonoBehaviour
     public Button leftButton;
     public Button rightButton;
     public Button goButton;
+    public Button goToHospitalButton;
+
     public RawImage carPreview;
     public TMPro.TextMeshProUGUI carName;
     public GameObject selectedCar;
@@ -21,6 +23,37 @@ public class CustomizeCar : MonoBehaviour
         selectedCar = carList[index];
         carPreview.texture = selectedCar.GetComponent<Vehicle>().txt;
         carName.text = "Selected Car: " + selectedCar.GetComponent<Vehicle>().VehicleName;
+    }
+
+    private IEnumerator LeaveCarSequence() {
+        Debug.Log("LeaveCarSequence");
+
+        GameObject AnimatedScene = GameObject.Find("AnimatedScene").gameObject;
+        GameObject Player = AnimatedScene.transform.Find("Player").gameObject;
+
+        // set visibility
+        Player.SetActive(true);     
+        
+        // walk to the hospital
+        float t = 3.0f;
+        float py = Player.transform.position.y;
+
+        while(t > 0.0f) {
+            Player.transform.position = new Vector3(Player.transform.position.x + 0.0075f, Player.transform.position.y, Player.transform.position.z);
+            
+            float dy = Mathf.Sin(t * 40.0f) * 0.075f;
+            Player.transform.position = new Vector3(Player.transform.position.x, py + dy, Player.transform.position.z);
+
+            t -= Time.deltaTime;
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1.0f);
+        Debug.Log("switch scenes now");
+        // add code that switches to the next scene
+        // for christina
+
+        yield return null;
     }
 
     private IEnumerator AnimationSequence() {
@@ -83,20 +116,33 @@ public class CustomizeCar : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
 
         // go make a button that goes to the next scene / it basically says "enter hospital"
+        goToHospitalButton.gameObject.SetActive(true);
+        coroutine = null;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        goToHospitalButton.gameObject.SetActive(false);
+
         goButton.onClick.AddListener(GoOnClick);
         leftButton.onClick.AddListener(LeftOnClick);
         rightButton.onClick.AddListener(RightOnClick);
+        goToHospitalButton.onClick.AddListener(LeaveCarOnClick);
         ChangeDetails();
     }
 
     // Update is called once per frame
     void Update()
     {}
+
+    void LeaveCarOnClick() {
+        if(coroutine == null) {
+            coroutine = LeaveCarSequence();
+            StartCoroutine(coroutine);
+        }
+        return;
+    }
 
     void GoOnClick()
     {
