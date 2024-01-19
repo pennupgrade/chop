@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7e35cc8fc53b84785b906ab91aa5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VehicleName: Clarkson
-  txt: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
+  VehicleName: Bus
+  txt: {fileID: 2800000, guid: 81330fcb807070b40bb77c4fcf9d8531, type: 3}

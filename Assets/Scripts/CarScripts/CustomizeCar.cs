@@ -65,6 +65,7 @@ public class CustomizeCar : MonoBehaviour
         GameObject Car = AnimatedScene.transform.Find("Car").gameObject;
         GameObject Background  = AnimatedScene.transform.Find("Background").gameObject;
         GameObject Road = AnimatedScene.transform.Find("Road").gameObject;
+        GameObject Chop = Road.transform.Find("Chop").gameObject;
 
         Debug.Log("Frame: " + Frame);
         Car.GetComponent<RawImage>().texture = carPreview.texture;
