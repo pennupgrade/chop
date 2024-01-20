@@ -65,7 +65,10 @@ public class CustomizeCar : MonoBehaviour
         GameObject Car = AnimatedScene.transform.Find("Car").gameObject;
         GameObject Background  = AnimatedScene.transform.Find("Background").gameObject;
         GameObject Road = AnimatedScene.transform.Find("Road").gameObject;
-        GameObject Chop = Road.transform.Find("Chop").gameObject;
+        GameObject Chop = AnimatedScene.transform.Find("Chop").gameObject;
+        GameObject Grass = AnimatedScene.transform.Find("RoadGrass").gameObject;
+        GameObject BG1 = AnimatedScene.transform.Find("BG1").gameObject;
+        GameObject BG2 = AnimatedScene.transform.Find("BG2").gameObject;
 
         Debug.Log("Frame: " + Frame);
         Car.GetComponent<RawImage>().texture = carPreview.texture;
@@ -86,6 +89,9 @@ public class CustomizeCar : MonoBehaviour
 
         float carY = Car.transform.position.y;
         float speed = 0.01f;
+        float grassSpeed = 0.05f;
+        float speedBG1 = 0.002f;
+        float speedBG2 = 0.005f;
 
         while(timer > 0.0f) {
             if(timer > outSequence) {
@@ -104,6 +110,10 @@ public class CustomizeCar : MonoBehaviour
             }
 
             Road.transform.position = new Vector3(Road.transform.position.x - speed, Road.transform.position.y, Road.transform.position.z);
+            Chop.transform.position = new Vector3(Chop.transform.position.x - speed, Chop.transform.position.y, Chop.transform.position.z);
+            Grass.transform.position = new Vector3(Grass.transform.position.x - grassSpeed, Grass.transform.position.y, Grass.transform.position.z);
+            BG1.transform.position = new Vector3(BG1.transform.position.x - speedBG1, BG1.transform.position.y, BG1.transform.position.z);
+            BG2.transform.position = new Vector3(BG2.transform.position.x - speedBG2, BG2.transform.position.y, BG2.transform.position.z);
 
             float dy = Mathf.Sin(timer * 40.0f) * 0.075f;
             Car.transform.position = new Vector3(Car.transform.position.x, carY + dy, Car.transform.position.z);
