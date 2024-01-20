@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CustomizeCar : MonoBehaviour
 {
@@ -50,8 +51,8 @@ public class CustomizeCar : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f);
         Debug.Log("switch scenes now");
-        // add code that switches to the next scene
-        // for christina
+        SceneManager.LoadScene("InsideChop");
+
 
         yield return null;
     }
@@ -69,6 +70,8 @@ public class CustomizeCar : MonoBehaviour
         GameObject Grass = AnimatedScene.transform.Find("RoadGrass").gameObject;
         GameObject BG1 = AnimatedScene.transform.Find("BG1").gameObject;
         GameObject BG2 = AnimatedScene.transform.Find("BG2").gameObject;
+        GameObject Bell = AnimatedScene.transform.Find("Bell").gameObject;
+        GameObject Statue = AnimatedScene.transform.Find("Statue").gameObject;
 
         Debug.Log("Frame: " + Frame);
         Car.GetComponent<RawImage>().texture = carPreview.texture;
@@ -92,6 +95,7 @@ public class CustomizeCar : MonoBehaviour
         float grassSpeed = 0.05f;
         float speedBG1 = 0.002f;
         float speedBG2 = 0.005f;
+        float speedBG3 = 0.007f;
 
         while(timer > 0.0f) {
             if(timer > outSequence) {
@@ -114,6 +118,8 @@ public class CustomizeCar : MonoBehaviour
             Grass.transform.position = new Vector3(Grass.transform.position.x - grassSpeed, Grass.transform.position.y, Grass.transform.position.z);
             BG1.transform.position = new Vector3(BG1.transform.position.x - speedBG1, BG1.transform.position.y, BG1.transform.position.z);
             BG2.transform.position = new Vector3(BG2.transform.position.x - speedBG2, BG2.transform.position.y, BG2.transform.position.z);
+            Bell.transform.position = new Vector3(Bell.transform.position.x - speedBG3, Bell.transform.position.y, Bell.transform.position.z);
+            Statue.transform.position = new Vector3(Statue.transform.position.x - speedBG3, Statue.transform.position.y, Statue.transform.position.z);
 
             float dy = Mathf.Sin(timer * 40.0f) * 0.075f;
             Car.transform.position = new Vector3(Car.transform.position.x, carY + dy, Car.transform.position.z);
