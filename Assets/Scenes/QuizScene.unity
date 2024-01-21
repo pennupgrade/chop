@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 952141137}
   - component: {fileID: 952141136}
   m_Layer: 5
-  m_Name: Button_1
+  m_Name: Stop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -699,8 +699,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -376, y: -192}
-  m_SizeDelta: {x: 50, y: 30}
+  m_AnchoredPosition: {x: -398, y: -201}
+  m_SizeDelta: {x: 67.55, y: 67.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &952141136
 MonoBehaviour:
