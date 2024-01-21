@@ -19,6 +19,19 @@ public class CustomizeCar : MonoBehaviour
     private IEnumerator coroutine;
     private int index = 0;
 
+    public GameObject UI;
+    GameObject Frame;
+    GameObject AnimatedScene;
+    GameObject Car; 
+    GameObject Background;
+    GameObject Road;
+    GameObject Chop;
+    GameObject Grass;
+    GameObject BG1;
+    GameObject BG2;
+    GameObject Bell;
+    GameObject Statue;
+
     void ChangeDetails()
     {
         selectedCar = carList[index];
@@ -53,33 +66,21 @@ public class CustomizeCar : MonoBehaviour
         Debug.Log("switch scenes now");
         SceneManager.LoadScene("InsideChop");
 
-
         yield return null;
     }
 
     private IEnumerator AnimationSequence() {
         Debug.Log("AnimationSequence");
-
-        GameObject UI = GameObject.Find("UI");
-        GameObject Frame = UI.transform.Find("Frame").gameObject;
-        GameObject AnimatedScene = GameObject.Find("AnimatedScene").gameObject;
-        GameObject Car = AnimatedScene.transform.Find("Car").gameObject;
-        GameObject Background  = AnimatedScene.transform.Find("Background").gameObject;
-        GameObject Road = AnimatedScene.transform.Find("Road").gameObject;
-        GameObject Chop = AnimatedScene.transform.Find("Chop").gameObject;
-        GameObject Grass = AnimatedScene.transform.Find("RoadGrass").gameObject;
-        GameObject BG1 = AnimatedScene.transform.Find("BG1").gameObject;
-        GameObject BG2 = AnimatedScene.transform.Find("BG2").gameObject;
-        GameObject Bell = AnimatedScene.transform.Find("Bell").gameObject;
-        GameObject Statue = AnimatedScene.transform.Find("Statue").gameObject;
-
         Debug.Log("Frame: " + Frame);
         Car.GetComponent<RawImage>().texture = carPreview.texture;
 
-        float t = 1.25f;
-
+        if (Frame != null) {
+            Frame.SetActive(false);
+        }
+        
+        float t = 0.50f;
         while(t > 0.0f) {
-            Frame.transform.position = new Vector3(Frame.transform.position.x, Frame.transform.position.y + 0.03f, Frame.transform.position.z);
+            //Frame.transform.position = new Vector3(Frame.transform.position.x, Frame.transform.position.y + 0.03f, Frame.transform.position.z);
             t -= Time.deltaTime;
             yield return null;
         }
@@ -106,7 +107,7 @@ public class CustomizeCar : MonoBehaviour
                 Car.transform.position = new Vector3(Car.transform.position.x + speed * 0.7f, Car.transform.position.y, Car.transform.position.z);
             }
             if(timer < seqLength) {
-                Background.transform.position = new Vector3(Background.transform.position.x - speed, Background.transform.position.y, Background.transform.position.z);
+                //Background.transform.position = new Vector3(Background.transform.position.x - speed, Background.transform.position.y, Background.transform.position.z);
                 speed -= Time.deltaTime * 0.01f;
             }
             if(timer < seqLength - 2.0f) {
@@ -147,11 +148,19 @@ public class CustomizeCar : MonoBehaviour
         rightButton.onClick.AddListener(RightOnClick);
         goToHospitalButton.onClick.AddListener(LeaveCarOnClick);
         ChangeDetails();
+        
+        Frame = UI.transform.Find("Frame").gameObject;
+        AnimatedScene = GameObject.Find("AnimatedScene").gameObject;
+        Car = AnimatedScene.transform.Find("Car").gameObject;
+        Background  = AnimatedScene.transform.Find("Background").gameObject;
+        Road = AnimatedScene.transform.Find("Road").gameObject;
+        Chop = AnimatedScene.transform.Find("Chop").gameObject;
+        Grass = AnimatedScene.transform.Find("RoadGrass").gameObject;
+        BG1 = AnimatedScene.transform.Find("BG1").gameObject;
+        BG2 = AnimatedScene.transform.Find("BG2").gameObject;
+        Bell = AnimatedScene.transform.Find("Bell").gameObject;
+        Statue = AnimatedScene.transform.Find("Statue").gameObject;
     }
-
-    // Update is called once per frame
-    void Update()
-    {}
 
     void LeaveCarOnClick() {
         if(coroutine == null) {
