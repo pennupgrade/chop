@@ -9,32 +9,28 @@ public class CustomizeClothes : MonoBehaviour
     public Button leftButton;
     public Button rightButton;
     public Button goButton;
-    public Button goToHospitalButton;
 
     public RawImage carPreview;
+    public RawImage finalShirt;
     public TMPro.TextMeshProUGUI carName;
     public GameObject selectedCar;
     public GameObject[] carList;
 
-    private IEnumerator coroutine;
     private int index = 0;
 
     void ChangeDetails()
     {
         selectedCar = carList[index];
         carPreview.texture = selectedCar.GetComponent<Vehicle>().txt;
-        carName.text = "Selected Clothes: " + selectedCar.GetComponent<Vehicle>().VehicleName;
+        carName.text = "Selected shirt: " + selectedCar.GetComponent<Vehicle>().VehicleName;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        goToHospitalButton.gameObject.SetActive(false);
-
         goButton.onClick.AddListener(GoOnClick);
         leftButton.onClick.AddListener(LeftOnClick);
         rightButton.onClick.AddListener(RightOnClick);
-        goToHospitalButton.onClick.AddListener(LeaveCarOnClick);
         ChangeDetails();
     }
 
@@ -42,21 +38,12 @@ public class CustomizeClothes : MonoBehaviour
     void Update()
     {}
 
-    void LeaveCarOnClick() {
-        if(coroutine == null) {
-        StartCoroutine(coroutine);
-        }
-        return;
-    }
-
     void GoOnClick()
     {
-        if(coroutine == null) {
-            StartCoroutine(coroutine);
-        }
-        return;
+        finalShirt.texture = selectedCar.GetComponent<Vehicle>().txt;
+        DontDestroyOnLoad(finalShirt.gameObject);
     }
-
+        
     void LeftOnClick()
     {
         index = (index - 1);
