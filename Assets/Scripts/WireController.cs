@@ -9,6 +9,8 @@ public class WireController : MonoBehaviour
 
     public GameObject wires;
 
+    public GameObject finishButton;
+
     GameObject leftHighlight;
     GameObject rightHighlight;
 
@@ -33,6 +35,11 @@ public class WireController : MonoBehaviour
             wires.transform.GetChild(button - 1).gameObject.SetActive(true);
             leftHighlight.SetActive(false);
             rightHighlight.SetActive(false);
+
+            for (int i = 0; i < 4; i++)
+                if (!wires.transform.GetChild(i).gameObject.activeSelf)
+                    return;
+            finishButton.SetActive(true);
         }
     }
     public void rightButtonPressed (int button){
@@ -43,6 +50,11 @@ public class WireController : MonoBehaviour
             wires.transform.GetChild(button - 1).gameObject.SetActive(true);
             leftHighlight.SetActive(false);
             rightHighlight.SetActive(false);
+
+            for (int i = 0; i < 4; i++)
+                if (!wires.transform.GetChild(i).gameObject.activeSelf)
+                    return;
+            finishButton.SetActive(true);
         }
 
     }
