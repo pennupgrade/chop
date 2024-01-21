@@ -16,7 +16,7 @@ public class CustomizeClothes : MonoBehaviour
     public GameObject selectedCar;
     public GameObject[] carList;
 
-    private int index = 0;
+    public int index = 0;
 
     void ChangeDetails()
     {
