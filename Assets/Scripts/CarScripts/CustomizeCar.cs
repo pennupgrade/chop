@@ -16,6 +16,10 @@ public class CustomizeCar : MonoBehaviour
     public GameObject selectedCar;
     public GameObject[] carList;
 
+    public GameObject player;
+
+    private GameObject shirt;
+
     private IEnumerator coroutine;
     private int index = 0;
 
@@ -86,6 +90,7 @@ public class CustomizeCar : MonoBehaviour
 
         float carY = Car.transform.position.y;
         float speed = 1.30f;
+        float roadSpeed = 5.50f;
         float grassSpeed = 8.55f;
 
         while(timer > 0.0f) {
@@ -111,15 +116,15 @@ public class CustomizeCar : MonoBehaviour
             
             float speedBG1 = gSpeedDelta * 0.1f;
             float speedBG2 = gSpeedDelta * 0.2f;
-            float speedBG3 = gSpeedDelta * 0.5f;
+            float speedBG3 = gSpeedDelta * 0.3f;
 
-            Road.transform.Translate(-speed * Time.deltaTime, 0.0f, 0.0f);
+            Road.transform.Translate(-roadSpeed * Time.deltaTime, 0.0f, 0.0f);
             Grass.transform.Translate(-gSpeedDelta * Time.deltaTime, 0.0f, 0.0f);
             Chop.transform.Translate(-gSpeedDelta * Time.deltaTime, 0.0f, 0.0f);
             BG1.transform.Translate(-speedBG1 * Time.deltaTime, 0.0f, 0.0f);
             BG2.transform.Translate(-speedBG2 * Time.deltaTime, 0.0f, 0.0f);
-            Bell.transform.Translate(speedBG3 * Time.deltaTime, 0.0f, 0.0f);
-            Statue.transform.Translate(speedBG3 * Time.deltaTime, 0.0f, 0.0f);
+            Bell.transform.Translate(-speedBG3 * Time.deltaTime, 0.0f, 0.0f);
+            Statue.transform.Translate(-speedBG3 * Time.deltaTime, 0.0f, 0.0f);
 
             float dy = Mathf.Sin(timer * 40.0f) * 0.875f;
             Car.transform.Translate(0.0f, dy * Time.deltaTime, 0.0f);
@@ -157,8 +162,12 @@ public class CustomizeCar : MonoBehaviour
         BG2 = AnimatedScene.transform.Find("BG2").gameObject;
         Chop = AnimatedScene.transform.Find("Chop").gameObject;
         Grass = AnimatedScene.transform.Find("RoadGrass").gameObject;
-        Bell = Grass.transform.Find("Bell").gameObject;
-        Statue = Grass.transform.Find("Statue").gameObject;
+        Bell = AnimatedScene.transform.Find("Bell").gameObject;
+        Statue = AnimatedScene.transform.Find("Statue").gameObject;
+
+        shirt = GameObject.Find("ShirtStorage");
+
+        player.GetComponent<RawImage>().texture = shirt.GetComponent<RawImage>().texture;
     }
 
     void LeaveCarOnClick() {
