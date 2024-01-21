@@ -6,6 +6,7 @@ public class PlayerData : MonoBehaviour
 {
     public string playerName;
     public int score;
+    public int outfit;
 
     private void Awake()
     {
