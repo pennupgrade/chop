@@ -2,13 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b774be20-38c7-4326-a725-519dffcdae72" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ChangeClothes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ChangeClothes.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts 1/getClothes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts 1/getClothes.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/green_base.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/green_base.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/text_input.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UI/text_input.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/LilitaOne-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/LilitaOne-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Nunito-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Nunito-VariableFont_wght SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CarScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CarScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChooseClothing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChooseClothing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Temp Assets/CarAssets/Clarkson.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Temp Assets/CarAssets/Clarkson.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Temp Assets/CarAssets/Ferrari.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Temp Assets/CarAssets/Ferrari.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Temp Assets/CarAssets/Lamborghini.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Temp Assets/CarAssets/Lamborghini.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ConnectWires.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ConnectWires.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Drag and Drop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Drag and Drop.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GoingHome.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GoingHome.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InsideChop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InsideChop.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuizScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QuizScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SleepingGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SleepingGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WakeUp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WakeUp.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts 1/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts 1/PlayerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CarScripts/CustomizeCar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CarScripts/CustomizeCar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomizeClothes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomizeClothes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,13 +42,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -39,6 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700199261325</updated>
       <workItem from="1700199264110" duration="10000" />
+      <workItem from="1705816127646" duration="9000" />
     </task>
     <servers />
   </component>
