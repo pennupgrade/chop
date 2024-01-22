@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WaitThenAppear : MonoBehaviour
 {
-    //public Button btn;
+    public Button btn;
 
     void Start()
     {
@@ -17,7 +17,6 @@ public class WaitThenAppear : MonoBehaviour
         Debug.Log("Coroutine started");
         yield return new WaitForSeconds(2.5f);
         Debug.Log("Coroutine ended");
-        this.gameObject.SetActive(true);
-        yield return null;
+        btn.gameObject.SetActive(true);
     }
 }
