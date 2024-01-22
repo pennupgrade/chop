@@ -50,7 +50,7 @@ public class DragAndDrop : MonoBehaviour
         isMoving = false;
         GameObject checkSpace;
 
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 6; i++) {
             checkSpace = spaces.transform.GetChild(i).gameObject;
             if (!checkSpace.GetComponent<Spaces>().isFilled) {
                 if (Mathf.Abs(this.transform.localPosition.x - checkSpace.transform.localPosition.x) <= 0.5f
@@ -74,7 +74,7 @@ public class DragAndDrop : MonoBehaviour
         bool hasWon = true;
         GameObject checkSpace;
 
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 6; i++) {
             checkSpace = stickers.transform.GetChild(i).gameObject;
             if (!checkSpace.GetComponent<DragAndDrop>().finished) {
                 hasWon = false;
@@ -83,7 +83,7 @@ public class DragAndDrop : MonoBehaviour
 
         if (hasWon) {
             Debug.Log("You win!");
-            SceneManager.LoadScene("StartScene");
+            SceneManager.LoadScene("Bandages");
         }
     }
 }
