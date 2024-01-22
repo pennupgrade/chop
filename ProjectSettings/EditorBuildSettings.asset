@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CarScene.unity
     guid: be153bdf6903f99489dacb040427f24f
   - enabled: 1
+    path: Assets/Scenes/InsideChop.unity
+    guid: caf51f99777c04e74aab5b6e62db1a33
+  - enabled: 1
     path: Assets/Scenes/Drag and Drop.unity
     guid: ec52b9663796b41fabe53bc3974becd1
   - enabled: 1
@@ -38,7 +41,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 1a7afa655244645198d5f516b7e37770
-  - enabled: 1
-    path: Assets/Scenes/InsideChop.unity
-    guid: caf51f99777c04e74aab5b6e62db1a33
   m_configObjects: {}

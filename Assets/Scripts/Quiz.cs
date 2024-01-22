@@ -73,7 +73,7 @@ public class Quiz : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(10);
+            SceneManager.LoadScene(11);
         }
     }
 }
