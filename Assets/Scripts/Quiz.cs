@@ -21,6 +21,11 @@ public class Quiz : MonoBehaviour
     public Button option3Button;
     public Button option4Button;
     public Button nextQuestionButton;
+
+    [SerializeField] Sprite wrongButtonSprite;
+    [SerializeField] Sprite rightButtonSprite;
+    [SerializeField] Sprite greyButtonSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,10 +55,10 @@ public class Quiz : MonoBehaviour
         {
             corrAns = true;
             nextQuestionButton.interactable = true;
-            Buttons[button - 1].GetComponent<Image>().color = new Color(0, 255, 0);
+            Buttons[button - 1].GetComponent<Image>().sprite = rightButtonSprite;
         }
         else
-            Buttons[button - 1].GetComponent<Image>().color = new Color(255, 0, 0);
+            Buttons[button - 1].GetComponent<Image>().sprite = wrongButtonSprite;
     }
 
     public void advanceQueue() {
@@ -61,7 +66,7 @@ public class Quiz : MonoBehaviour
         {
             foreach (Button b in Buttons)
             {
-                b.GetComponent<Image>().color = new Color(255, 255, 255);
+                b.GetComponent<Image>().sprite = greyButtonSprite;
             }
             corrAns = false;
             setQuestion((Question)questions.Dequeue());
