@@ -32,7 +32,8 @@ public class Quiz : MonoBehaviour
         Buttons = new Button[] { option1Button, option2Button, option3Button, option4Button };
 
         questions.Enqueue(new Question("What will Ahtish ask you about in the call?", new string[]{ "Your dinner", "Your sleep", "School", "Swimming" }, 2));
-        questions.Enqueue(new Question("What is the purpose of this study?", new string[] { "Eat ice cream", "Get a dog", "To help children", "To dance" }, 3));
+        questions.Enqueue(new Question("What is the purpose of this study?", new string[] { "Eat ice cream", "Get a dog", "To help teens and adults", "To dance" }, 3));
+        questions.Enqueue(new Question("What is a risk?", new string[] { "Stickers bother you", "Nose prongs bother you", "You feel itchy", "All of the above" }, 4));
 
         setQuestion((Question) questions.Dequeue());
     }
