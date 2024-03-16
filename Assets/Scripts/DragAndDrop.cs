@@ -15,10 +15,13 @@ public class DragAndDrop : MonoBehaviour
 
     private Vector3 resetPos;
 
+    public GameObject controller;
+
     void Start()
     {
         spaces = GameObject.Find("Spaces");
         stickers = GameObject.Find("Stickers");
+        controller = GameObject.Find("GameController");
         resetPos = this.transform.localPosition;
         finished = false;
     }
@@ -50,7 +53,7 @@ public class DragAndDrop : MonoBehaviour
         isMoving = false;
         GameObject checkSpace;
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 8; i++) {
             checkSpace = spaces.transform.GetChild(i).gameObject;
             if (!checkSpace.GetComponent<Spaces>().isFilled) {
                 if (Mathf.Abs(this.transform.localPosition.x - checkSpace.transform.localPosition.x) <= 0.5f
@@ -71,19 +74,31 @@ public class DragAndDrop : MonoBehaviour
     }
 
     private void checkWin() {
-        bool hasWon = true;
+        bool hasWon1 = true;
         GameObject checkSpace;
 
         for (int i = 0; i < 6; i++) {
             checkSpace = stickers.transform.GetChild(i).gameObject;
             if (!checkSpace.GetComponent<DragAndDrop>().finished) {
-                hasWon = false;
+                hasWon1 = false;
             } 
         }
 
-        if (hasWon) {
-            Debug.Log("You win!");
-            SceneManager.LoadScene("Bandages");
+        if (hasWon1) {
+            Debug.Log("Part 1 won");
+            controller.GetComponent<DragAndDropController>().Win();
+
+            bool hasWon2 = true;
+            for (int i = 6; i < 8; i++) {
+                checkSpace = stickers.transform.GetChild(i).gameObject;
+                if (!checkSpace.GetComponent<DragAndDrop>().finished) {
+                    hasWon2 = false;
+                } 
+            }
+
+            if (hasWon2) {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 }
