@@ -30,6 +30,7 @@ public class SleepingManager : MonoBehaviour
 
     // Left = false, Right = true
     private bool Side = false;
+    private bool Orientation = false;
     
     // Start is called before the first frame update
     void Start()
@@ -42,11 +43,43 @@ public class SleepingManager : MonoBehaviour
         RightFlip.onClick.AddListener(() => FlipPerson(true));
     }
 
+    void flipTexture() {
+        Vector3 playerScale = player.transform.localScale;
+        playerScale.x *= -1.0f;
+        player.transform.localScale = playerScale;
+    }
+
+    void resetOrientation() {
+        Vector3 playerScale = player.transform.localScale;
+        playerScale.x = Mathf.Abs(playerScale.x);
+        player.transform.localScale = playerScale;
+    }
+
     private IEnumerator TurnEvent() {
         float initialtime = 4.0f;
         float t = initialtime;
 
-        TimeLabel.text = "Flip them " + (Side ? "right" : "left") + "!";
+        // face up
+        player.texture = playerTextures[0];
+
+        // flip the player to the side now
+        yield return new WaitForSeconds(2.5f);
+
+        float random = Random.Range(0.0f, 1.0f);
+
+        Side = random > 0.5f;
+        IsFlipped = true;
+
+        player.texture = playerTextures[1];
+        if (Side) {
+            flipTexture();
+        }
+
+        // give time to react
+        yield return new WaitForSeconds(1.0f);
+
+        player.texture = playerTextures[2];
+        TimeLabel.text = "Flip them! Don't let them sleep on their belly!";
 
         while(t > 0.0f && IsFlipped) {
             float ratio = t / initialtime;
@@ -61,7 +94,6 @@ public class SleepingManager : MonoBehaviour
         if(t <= 0.0f) {
             Debug.Log("Task failed!");
             TimeLabel.text = "Oh no!";
-            player.texture = playerTextures[2];
             StartGame = false;
 
             Frame.SetActive(true);
@@ -72,11 +104,8 @@ public class SleepingManager : MonoBehaviour
         } else {
             Timebar.GetComponent<SpriteRenderer>().color = Color.white;
             TimeLabel.text = "Good job!";
-            player.texture = playerTextures[0];
             
-            Vector3 newSize = player.transform.localScale;
-            newSize.x = Mathf.Abs(newSize.x);
-            player.transform.localScale = newSize;
+            player.texture = playerTextures[1];
 
             IsFlipped = false;
         }
@@ -104,17 +133,20 @@ public class SleepingManager : MonoBehaviour
         Debug.Log("TurnEvent end, rest");
         //player.GetComponent<SpriteRenderer>().color = Color.white;
         Timebar.transform.localScale = InitialSize;
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(1.0f);
 
         coroutine = null;
     }
     
-    void FlipPerson(bool direction) {
+    void FlipPerson(bool dir) {
         // reverse sort of logic if they're facing right, we want to flip it lefts
-        if (direction == !Side) {
-            IsFlipped = false;
-            Debug.Log("Correct!");
+        IsFlipped = false;
+        resetOrientation();
+
+        if (!dir) {
+           flipTexture(); 
         }
+        Debug.Log("Correct!");
     }
 
     void ResetGame()
@@ -143,15 +175,6 @@ public class SleepingManager : MonoBehaviour
             float random = Random.Range(0.0f, 1.0f);
 
             if (!IsFlipped && coroutine == null) {
-                Side = random > 0.5f;
-                IsFlipped = true;
-
-                player.texture = playerTextures[1];
-
-                Vector3 playerSize = player.transform.localScale;
-                playerSize.x = Side ? 1.0f * playerSize.x : -1.0f * playerSize.x;
-                player.transform.localScale = playerSize;
-
                 coroutine = TurnEvent();
                 StartCoroutine(coroutine);
             }
