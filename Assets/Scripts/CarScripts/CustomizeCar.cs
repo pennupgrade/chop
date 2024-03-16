@@ -41,6 +41,14 @@ public class CustomizeCar : MonoBehaviour
         selectedCar = carList[index];
         carPreview.texture = selectedCar.GetComponent<Vehicle>().txt;
         carName.text = "Selected Car: " + selectedCar.GetComponent<Vehicle>().VehicleName;
+
+        RectTransform rt = carPreview.gameObject.GetComponent<RectTransform>();
+        Vector2 sizeWant = new Vector2(((float)carPreview.texture.width)/carPreview.texture.height*rt.rect.height, rt.rect.height);
+        var rtp = rt.parent.transform as RectTransform;
+        Vector2 sizep = rtp.rect.size;
+        sizep.Scale((rt.anchorMax - rt.anchorMin));
+        var sdelta = sizeWant - sizep;
+        rt.sizeDelta = sdelta;
     }
 
     private IEnumerator LeaveCarSequence() {
@@ -74,7 +82,16 @@ public class CustomizeCar : MonoBehaviour
         Debug.Log("AnimationSequence");
         Debug.Log("Frame: " + Frame);
         Car.GetComponent<RawImage>().texture = carPreview.texture;
-        
+
+        RectTransform rt = Car.GetComponent<RectTransform>();
+        Vector2 sizeWant = new Vector2(((float)carPreview.texture.width) / carPreview.texture.height * rt.rect.height, rt.rect.height);
+        var rtp = rt.parent.transform as RectTransform;
+        Vector2 sizep = rtp.rect.size;
+        sizep.Scale((rt.anchorMax - rt.anchorMin));
+        var sdelta = sizeWant - sizep;
+        rt.sizeDelta = sdelta;
+
+
         float t = 3.00f;
         while(t > 0.0f) {
             Frame.transform.Translate(0.0f, 3.0f * Time.deltaTime, 0.0f);
@@ -168,6 +185,11 @@ public class CustomizeCar : MonoBehaviour
         shirt = GameObject.Find("ShirtStorage");
 
         player.GetComponent<RawImage>().texture = shirt.GetComponent<RawImage>().texture;
+        if (carList[3])
+        {
+            carList[3].GetComponent<Vehicle>().txt = shirt.GetComponent<RawImage>().texture;
+        }
+
     }
 
     void LeaveCarOnClick() {

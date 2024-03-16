@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b774be20-38c7-4326-a725-519dffcdae72" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts 1/getClothes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts 1/getClothes.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/green_base.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/green_base.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/text_input.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UI/text_input.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/LilitaOne-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/LilitaOne-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/Nunito-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Nunito-VariableFont_wght SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CarScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CarScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChooseClothing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChooseClothing.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ConnectWires.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ConnectWires.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Drag and Drop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Drag and Drop.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GoingHome.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GoingHome.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InsideChop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InsideChop.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuizScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/QuizScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SleepingGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SleepingGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WakeUp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WakeUp.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts 1/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts 1/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CarScripts/CustomizeCar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CarScripts/CustomizeCar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomizeClothes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomizeClothes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Temp Assets/Clothes/Clothe 4.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="b774be20-38c7-4326-a725-519dffcdae72" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +32,7 @@
       <updated>1700199261325</updated>
       <workItem from="1700199264110" duration="10000" />
       <workItem from="1705816127646" duration="9000" />
+      <workItem from="1706206289776" duration="26000" />
     </task>
     <servers />
   </component>
