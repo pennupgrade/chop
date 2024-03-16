@@ -527,9 +527,9 @@ MonoBehaviour:
   option3Button: {fileID: 851781456}
   option4Button: {fileID: 1253953284}
   nextQuestionButton: {fileID: 1680026389}
-  wrongButtonSprite: {fileID: 21300000, guid: 0cebcfdaea8f650478fe7b39d445e42e, type: 3}
-  rightButtonSprite: {fileID: 21300000, guid: 4e1e69d7d016cb34f900e1c78ca9c34e, type: 3}
-  greyButtonSprite: {fileID: 21300000, guid: cde6537bc27e40b49b3ac7f55175057b, type: 3}
+  wrongButtonSprite: {fileID: 21300000, guid: ab38adc2e2b0e4c72ac7e9d9a9ffaca7, type: 3}
+  rightButtonSprite: {fileID: 21300000, guid: a79252b1b4cd241ad851aed09092066b, type: 3}
+  greyButtonSprite: {fileID: 21300000, guid: 5e775718d9e56469db6ec3c56c2310b7, type: 3}
 --- !u!1 &851781454
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cde6537bc27e40b49b3ac7f55175057b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e775718d9e56469db6ec3c56c2310b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cde6537bc27e40b49b3ac7f55175057b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e775718d9e56469db6ec3c56c2310b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1145,7 +1145,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cde6537bc27e40b49b3ac7f55175057b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e775718d9e56469db6ec3c56c2310b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cde6537bc27e40b49b3ac7f55175057b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e775718d9e56469db6ec3c56c2310b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
