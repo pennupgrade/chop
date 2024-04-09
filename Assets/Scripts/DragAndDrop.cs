@@ -88,7 +88,7 @@ public class DragAndDrop : MonoBehaviour
             Debug.Log("Part 1 won");
             controller.GetComponent<DragAndDropController>().Win();
 
-            bool hasWon2 = true;
+            bool hasWon2 = true; 
             for (int i = 6; i < 8; i++) {
                 checkSpace = stickers.transform.GetChild(i).gameObject;
                 if (!checkSpace.GetComponent<DragAndDrop>().finished) {
@@ -97,7 +97,7 @@ public class DragAndDrop : MonoBehaviour
             }
 
             if (hasWon2) {
-                SceneManager.LoadScene(0);
+                controller.GetComponent<DragAndDropController>().DragDropDone();
             }
         }
     }
