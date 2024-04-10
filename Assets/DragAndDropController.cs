@@ -24,39 +24,33 @@ public class DragAndDropController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    public void Win()
-    {
+    public void Win() {
         //hide stickers & spaces
-        for (int i = 0; i < 6; i++)
-        {
+        for (int i = 0; i < 6; i++) {
             spaces.transform.GetChild(i).gameObject.SetActive(false);
             stickers.transform.GetChild(i).gameObject.SetActive(false);
         }
 
-        foreach (GameObject obj in objectsToHide)
-        {
+        foreach (GameObject obj in objectsToHide) {
             obj.SetActive(false);
         }
 
-        foreach (GameObject obj in objectsToShow)
-        {
+        foreach (GameObject obj in objectsToShow) {
             obj.SetActive(true);
         }
 
     }
 
-    public void DragDropDone()
-    {
-        foreach (GameObject obj in objectsToShow)
-        {
+    public void DragDropDone() {
+        foreach (GameObject obj in objectsToShow) {
             obj.SetActive(false);
         }
         button.SetActive(true);
         imagesToShow[0].SetActive(true);
-
+        
     }
 
     public void NextObject()
@@ -67,13 +61,10 @@ public class DragAndDropController : MonoBehaviour
         // Increment the index to show the next object
         currentIndex = currentIndex + 1;
 
-        if (currentIndex == 4)
-        {
+        if (currentIndex == 4) {
             SceneManager.LoadScene(13);
-        }
-        else
-        {
-            // Show the next object
+        } else {
+        // Show the next object
             imagesToShow[currentIndex].SetActive(true);
         }
     }
