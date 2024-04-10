@@ -81,7 +81,15 @@ public class CustomizeCar : MonoBehaviour
     private IEnumerator AnimationSequence() {
         Debug.Log("AnimationSequence");
         Debug.Log("Frame: " + Frame);
+
         Car.GetComponent<RawImage>().texture = carPreview.texture;
+
+        if (index == 3) {
+            //  no car selected 
+            Car.GetComponent<RawImage>().color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            Car.transform.Find("Player").gameObject.SetActive(true);
+        }
+
 
         RectTransform rt = Car.GetComponent<RectTransform>();
         Vector2 sizeWant = new Vector2(((float)carPreview.texture.width) / carPreview.texture.height * rt.rect.height, rt.rect.height);
