@@ -62,7 +62,7 @@ public class DragAndDropController : MonoBehaviour
         currentIndex = currentIndex + 1;
 
         if (currentIndex == 4) {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(13);
         } else {
         // Show the next object
             imagesToShow[currentIndex].SetActive(true);
