@@ -900,7 +900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finished: 0
   colour: 4
-  controller: {fileID: 0}
+  controller: {fileID: 1107844926}
 --- !u!61 &337408081
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finished: 0
   colour: 5
-  controller: {fileID: 0}
+  controller: {fileID: 1107844926}
 --- !u!61 &374189884
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finished: 0
   colour: 0
-  controller: {fileID: 0}
+  controller: {fileID: 1107844926}
 --- !u!61 &443013785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finished: 0
   colour: 6
-  controller: {fileID: 0}
+  controller: {fileID: 1107844926}
 --- !u!61 &835374576
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3023,7 +3023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finished: 0
   colour: 3
-  controller: {fileID: 0}
+  controller: {fileID: 1107844926}
 --- !u!61 &1379500136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3549,7 +3549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finished: 0
   colour: 1
-  controller: {fileID: 0}
+  controller: {fileID: 1107844926}
 --- !u!61 &1838045548
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3811,7 +3811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finished: 0
   colour: 7
-  controller: {fileID: 0}
+  controller: {fileID: 1107844926}
 --- !u!61 &1897939647
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4209,7 +4209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finished: 0
   colour: 2
-  controller: {fileID: 0}
+  controller: {fileID: 1107844926}
 --- !u!61 &2059891253
 BoxCollider2D:
   m_ObjectHideFlags: 0
