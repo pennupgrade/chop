@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveHandsScript : MonoBehaviour
 {
@@ -66,7 +67,7 @@ public class MoveHandsScript : MonoBehaviour
         if (failureTimer <= 0)
             failureMessage.SetActive(false);
         if (currTime <= 0)
-            Debug.Log("You win! Move to next scene");//win state
+            SceneManager.LoadScene(12);
     }
 
     public void resetHand(int hand)

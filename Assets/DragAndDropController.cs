@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DragAndDropController : MonoBehaviour
 {
@@ -37,5 +38,6 @@ public class DragAndDropController : MonoBehaviour
         foreach (GameObject obj in objectsToShow) {
             obj.SetActive(true);
         }
+        SceneManager.LoadScene(13);
     }
 }
