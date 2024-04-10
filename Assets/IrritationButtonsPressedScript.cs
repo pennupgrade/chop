@@ -25,7 +25,7 @@ public class IrritationButtonsPressedScript : MonoBehaviour
         if (timer > 0)
             timer -= Time.deltaTime;
         if (timer <= 0)
-            SceneManager.LoadScene(10);
+            SceneManager.LoadScene(8);
     }
 
     public void OnButtonPressed(int button)
