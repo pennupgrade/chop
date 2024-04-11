@@ -22,7 +22,7 @@ public class SleepingManager : MonoBehaviour
     public TMPro.TextMeshProUGUI ButtonLabel;
     public GameObject Timebar;
 
-    private float GameTimer = 20.0f;
+    private float GameTimer = 60.0f;
     private Vector3 InitialSize = new Vector3(0.0f, 0.0f, 0.0f);
     
     private IEnumerator coroutine;
@@ -92,7 +92,7 @@ public class SleepingManager : MonoBehaviour
         float initialtime = 10.0f;
         float t = initialtime;
 
-        
+        TimeLabel.text = "Your parent must drag the equipment back on!";
         // face up
         player.texture = playerTextures[0];
         ShowStickerUI();
@@ -259,7 +259,7 @@ public class SleepingManager : MonoBehaviour
 
     void ResetGame()
     {
-        GameTimer = 20.0f;
+        GameTimer = 60.0f;
         TimeLabel.text = "";
         Timebar.transform.localScale = InitialSize;
         Timebar.GetComponent<SpriteRenderer>().color = Color.white;

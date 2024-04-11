@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FaceScratching.unity
     guid: fdf4cc76ee2ba47c6949f8d012ecf3e1
+  - enabled: 1
+    path: Assets/Scenes/goingHome 1.unity
+    guid: cda31b127e11a447b86dfea812dd5a30
+  - enabled: 1
+    path: Assets/Scenes/noLotion.unity
+    guid: 0369318a98d7b42e9adcf5888b4cf9f1
   m_configObjects: {}
