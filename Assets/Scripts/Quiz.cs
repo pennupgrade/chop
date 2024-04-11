@@ -34,7 +34,7 @@ public class Quiz : MonoBehaviour
         questions.Enqueue(new Question("What will Ahtish ask you about in the call?", new string[]{ "Your dinner", "Your sleep", "School", "Swimming" }, 2));
         questions.Enqueue(new Question("What is the purpose of this study?", new string[] { "Eat ice cream", "Get a dog", "To help teens and adults", "To dance" }, 3));
         questions.Enqueue(new Question("What is a risk?", new string[] { "Stickers bother you", "Nose prongs bother you", "You feel itchy", "All of the above" }, 4));
-        questions.Enqueue(new Question("What side should you not sleep on?", new string[] { "Left", "Right", "Belly", "Up" }, 2));
+        questions.Enqueue(new Question("What side should you not sleep on?", new string[] { "Left", "Right", "Belly", "Up" }, 3));
         questions.Enqueue(new Question("What can you do to distract yourself when you're uncomfortable?", new string[] { "Play videogames", "Read a book", "Listen to music", "All of the above" }, 4));
         questions.Enqueue(new Question("Where can you apply lotion or hair products?", new string[] { "Face", "Chin", "Chest", "None of the above, don't!" }, 4));
 

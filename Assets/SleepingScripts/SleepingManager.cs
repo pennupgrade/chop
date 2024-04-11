@@ -294,6 +294,7 @@ public class SleepingManager : MonoBehaviour
         } else {
             Debug.Log("Game ended, you win!");
             StartGame = false;
+            SceneManager.LoadScene(9);
         }
     }
 
