@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class DragAndDropController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class DragAndDropController : MonoBehaviour
     public GameObject[] objectsToShow;
     public GameObject[] imagesToShow;
     public GameObject button;
+    public TMP_Text text;
 
     private GameObject spaces;
     private GameObject stickers;
@@ -41,6 +43,7 @@ public class DragAndDropController : MonoBehaviour
         foreach (GameObject obj in objectsToShow) {
             obj.SetActive(true);
         }
+        text.text = "Drag and drop the watch and wire into place";
 
     }
 

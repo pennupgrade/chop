@@ -24,6 +24,7 @@ public class CustomizeCar : MonoBehaviour
     private int index = 0;
 
     public GameObject UI;
+    public GameObject VisitPanel;
     GameObject Frame;
     GameObject AnimatedScene;
     GameObject Car; 
@@ -109,8 +110,8 @@ public class CustomizeCar : MonoBehaviour
 
         Debug.Log("Start driving: " + selectedCar.GetComponent<Vehicle>().VehicleName);
 
-        float timer = 14.0f;
-        float seqLength = 3.0f;
+        float timer = 10.0f;
+        float seqLength = 2.5f;
         float outSequence = timer - seqLength;
 
         float carY = Car.transform.position.y;
@@ -131,7 +132,8 @@ public class CustomizeCar : MonoBehaviour
             if(timer < seqLength) {
                 speed -= 0.1f * Time.deltaTime;
             }
-            if(timer < seqLength - 4.0f) {
+            if(timer<seqLength+2) { VisitPanel.SetActive(false); }
+            if (timer < seqLength - 4.0f) {
                 translateSpeed *= 0.7f;
                 Car.transform.Translate(-translateSpeed * Time.deltaTime, 0.0f, 0.0f);
                 Chop.transform.Translate(translateSpeed * Time.deltaTime, 0.0f, 0.0f);

@@ -703,7 +703,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 87893245f6a2e4c4c90d8ad2fc8dd670, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6392157, g: 0.027450982, b: 0.7176471, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1426,7 +1426,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 87893245f6a2e4c4c90d8ad2fc8dd670, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9294118, g: 0.43137258, b: 0.10980393, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1795,7 +1795,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 87893245f6a2e4c4c90d8ad2fc8dd670, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.33333334, g: 0.38823533, b: 0.80392164, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2056,7 +2056,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 87893245f6a2e4c4c90d8ad2fc8dd670, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2124,8 +2124,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The stickers need to be kept safe! \nPlease do NOT: \n- Run around and
-    get sweaty\n- Go in a pool\n- Take a bath or shower tonight"
+  m_text: "The stickers need to be kept safe! \nPlease do <u><b>NOT</b></u>: \n-
+    Run around and get sweaty\n- Go in a pool\n- Take a bath or shower tonight"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63c8058520051a143bc40319d2b63fe4, type: 2}
   m_sharedMaterial: {fileID: 550492569393596091, guid: 63c8058520051a143bc40319d2b63fe4, type: 2}
@@ -2400,8 +2400,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Now that you have all the stickers on, you can go home. Please do not take
-    off the stickers. Does that make sense?
+  m_text: Now that you have everything on, you can go home. Please do not take anything
+    off before bed. Does that make sense?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63c8058520051a143bc40319d2b63fe4, type: 2}
   m_sharedMaterial: {fileID: 550492569393596091, guid: 63c8058520051a143bc40319d2b63fe4, type: 2}
@@ -2614,7 +2614,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 87893245f6a2e4c4c90d8ad2fc8dd670, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9294118, g: 0.8117648, b: 0.058823533, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3568,7 +3568,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 87893245f6a2e4c4c90d8ad2fc8dd670, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.06666667, g: 0.8196079, b: 0.07450981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

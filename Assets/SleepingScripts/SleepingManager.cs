@@ -92,7 +92,7 @@ public class SleepingManager : MonoBehaviour
         float initialtime = 10.0f;
         float t = initialtime;
 
-        TimeLabel.text = "Your parent must drag the equipment back on!";
+        TimeLabel.text = "Drag the wires back into place!";
         // face up
         player.texture = playerTextures[0];
         ShowStickerUI();
@@ -197,7 +197,7 @@ public class SleepingManager : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         player.texture = playerTextures[2];
-        TimeLabel.text = "Flip them! Don't let them sleep on their belly!";
+        TimeLabel.text = "Use the yellow arrows to flip them! Don't let them sleep on their belly!";
 
         while(t > 0.0f && IsFlipped) {
             adjutstTimebar(t, initialtime);

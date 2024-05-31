@@ -22,6 +22,7 @@ public class CustomizeClothes : MonoBehaviour
     {
         selectedCar = carList[index];
         carPreview.texture = selectedCar.GetComponent<Vehicle>().txt;
+        carPreview.color = new Color(0, 0, 255);
         carName.text = "Selected shirt: " + selectedCar.GetComponent<Vehicle>().VehicleName;
     }
 

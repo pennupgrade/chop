@@ -294,7 +294,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 400}
-  m_SizeDelta: {x: 1742, y: 100}
+  m_SizeDelta: {x: 1944, y: 246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231169892
 MonoBehaviour:
@@ -1822,7 +1822,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click the hand so that you don't scratch your face!
+  m_text: "Click the hands to that you don\u2019t scratch your face and move wires
+    and stickers around"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63c8058520051a143bc40319d2b63fe4, type: 2}
   m_sharedMaterial: {fileID: 550492569393596091, guid: 63c8058520051a143bc40319d2b63fe4, type: 2}

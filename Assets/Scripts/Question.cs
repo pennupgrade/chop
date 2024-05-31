@@ -13,8 +13,6 @@ public class Question : MonoBehaviour
     {
         if (options.Length != 4)
             throw new System.Exception("Wrong number of options");
-        if (!(corr >= 1 && corr <= 4))
-            throw new System.Exception("Enter correct integer");
         this.question = question;
         this.options = options;
         correct = corr;

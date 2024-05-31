@@ -932,8 +932,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Remember: this study is completely voluntary! There will always be a stop
-    button in the corner if you want to finish at any time.'
+  m_text: 'Remember: this game is optional, you do NOT have to play. There will always
+    be a stop button in the corner if you want to stop at any time.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63c8058520051a143bc40319d2b63fe4, type: 2}
   m_sharedMaterial: {fileID: 550492569393596091, guid: 63c8058520051a143bc40319d2b63fe4, type: 2}

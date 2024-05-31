@@ -31,12 +31,11 @@ public class Quiz : MonoBehaviour
     {
         Buttons = new Button[] { option1Button, option2Button, option3Button, option4Button };
 
-        questions.Enqueue(new Question("What will Ahtish ask you about in the call?", new string[]{ "Your dinner", "Your sleep", "School", "Swimming" }, 2));
-        questions.Enqueue(new Question("What is the purpose of this study?", new string[] { "Eat ice cream", "Get a dog", "To help teens and adults", "To dance" }, 3));
-        questions.Enqueue(new Question("What is a risk?", new string[] { "Stickers bother you", "Nose prongs bother you", "You feel itchy", "All of the above" }, 4));
-        questions.Enqueue(new Question("What side should you not sleep on?", new string[] { "Left", "Right", "Belly", "Up" }, 3));
-        questions.Enqueue(new Question("What can you do to distract yourself when you're uncomfortable?", new string[] { "Play videogames", "Read a book", "Listen to music", "All of the above" }, 4));
-        questions.Enqueue(new Question("Where can you apply lotion or hair products?", new string[] { "Face", "Chin", "Chest", "None of the above, don't!" }, 4));
+        questions.Enqueue(new Question("What will The Researchers ask you about in the call?", new string[]{ "Your dinner", "Your sleep", "School", "Swimming" }, 2));
+        questions.Enqueue(new Question("Who are you helping by doing research?", new string[] { "Teachers", "Dogs", "People with Down Syndrome", "Babies" }, 3));
+        questions.Enqueue(new Question("Which of these things might happen to you?", new string[] { "Stickers bother you", "Nose prongs bother you", "You feel itchy", "The bandage is uncomfortable"}, 5));
+        questions.Enqueue(new Question("What side should you <b>not</b> sleep on?", new string[] { "Left side", "Right side", "Belly", "Back" }, 3));
+        questions.Enqueue(new Question("What are some things you can do while you're waiting to go to bed?", new string[] { "Play videogames", "Read a book", "Listen to music", "Any sitting activity" }, 5));
 
         setQuestion((Question) questions.Dequeue());
     }
@@ -53,13 +52,18 @@ public class Quiz : MonoBehaviour
     }
 
     public void OptionClick(int button) {
-        if (Equals(currQuestion,null) || corrAns)
+        if (Equals(currQuestion, null) || corrAns)
             return;
         if (button == currQuestion.GetCorrect())
         {
             corrAns = true;
             nextQuestionButton.interactable = true;
             Buttons[button - 1].GetComponent<Image>().sprite = rightButtonSprite;
+        }
+        else if (currQuestion.GetOptions().Length < currQuestion.GetCorrect())
+        {
+            Buttons[button - 1].GetComponent<Image>().sprite = rightButtonSprite;
+            nextQuestionButton.interactable = true;
         }
         else
             Buttons[button - 1].GetComponent<Image>().sprite = wrongButtonSprite;
