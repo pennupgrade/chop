@@ -22,7 +22,9 @@ public class SleepingManager : MonoBehaviour
     public TMPro.TextMeshProUGUI ButtonLabel;
     public GameObject Timebar;
 
-    private float GameTimer = 60.0f;
+    // changed to 30 seconds
+    // TO DO: Make this a public adjustable variable
+    private float GameTimer = 30.0f;
     private Vector3 InitialSize = new Vector3(0.0f, 0.0f, 0.0f);
     
     private IEnumerator coroutine;
@@ -33,6 +35,11 @@ public class SleepingManager : MonoBehaviour
     // Left = false, Right = true
     private bool Side = false;
     private bool Orientation = false;
+
+    // I'm sorry for whoever has to deal with this file
+    // this is the easiest way to separate the games because I don't have the time to separate them
+    // true = roll, false = equip
+    public bool isRollOrEquip = false;
 
     void BlockStickerUI() {
         foreach (GameObject SleepingSticker in stickers) {
@@ -287,7 +294,7 @@ public class SleepingManager : MonoBehaviour
             float random = Random.Range(0.0f, 1.0f);
 
             if (!IsFlipped && coroutine == null) {
-                coroutine = random > 0.5f ? TurnEvent() : LooseBandageEvent();
+                coroutine = isRollOrEquip ? TurnEvent() : LooseBandageEvent();
                 StartCoroutine(coroutine);
             }
 

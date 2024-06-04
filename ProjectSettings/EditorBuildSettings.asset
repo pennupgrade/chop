@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ConnectWires.unity
     guid: e65f81e5de5394c2c8075f5f8be53e8f
   - enabled: 1
-    path: Assets/Scenes/SleepingGame.unity
+    path: Assets/Scenes/EquipmentGame.unity
     guid: 83bb50fe44d454e0db0ad580d135dd38
   - enabled: 1
     path: Assets/Scenes/WakeUp.unity
