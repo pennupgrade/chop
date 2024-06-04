@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MoveHandsScript : MonoBehaviour
 {
-    public float totalTime=30;//amount of time the player has to survive
+    public float totalTime = 30;//amount of time the player has to survive
+    private int clicks = 0;
     float currTime;
 
     public GameObject leftHand;
@@ -36,15 +37,19 @@ public class MoveHandsScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        // update all timers
         if (leftTimer > 0)
             leftTimer -= Time.deltaTime;
         if (rightTimer > 0)
             rightTimer -= Time.deltaTime;
         if (failureTimer > 0)
             failureTimer -= Time.deltaTime;
+
+        // reduce current time
         currTime -= Time.deltaTime;
 
+        // ??? don't know what this does
         if (leftTimer <= 0)
             leftVelocity = new Vector3(moveSpeed,0,0);
         if (rightTimer <= 0)
@@ -53,11 +58,12 @@ public class MoveHandsScript : MonoBehaviour
         leftHand.transform.position += leftVelocity * Time.deltaTime;
         rightHand.transform.position += rightVelocity * Time.deltaTime;
 
+        // if either hand reaches the failure zone -- player did not click quick enough
         if (leftHand.transform.localPosition.x >= -510 || rightHand.transform.localPosition.x <= 510)
         {
             failureMessage.SetActive(true);
-            resetHand(0);
-            resetHand(1);
+            resetHand(2); // refer to resetHand() to why I set 2,3
+            resetHand(3);
             leftVelocity = rightVelocity = Vector3.zero;
             failureTimer = maxFailureTime;
             leftTimer += failureTimer;
@@ -66,12 +72,19 @@ public class MoveHandsScript : MonoBehaviour
         }
         if (failureTimer <= 0)
             failureMessage.SetActive(false);
-        if (currTime <= 0)
+        if (currTime <= 0 || clicks >= 4)
             SceneManager.LoadScene(12);
     }
 
     public void resetHand(int hand)
     {
+        // condition that either hand gets clicked s.t it triggers reset
+        if (hand <= 1) {
+            clicks++;
+        } else {
+            // hack so that we differentiate between failure reset vs. good reset
+            hand -= 2;
+        }
         switch (hand)
         {
             case 0:
