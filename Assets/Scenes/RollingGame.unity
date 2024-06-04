@@ -1958,7 +1958,7 @@ MonoBehaviour:
   stickers:
   - {fileID: 1721472243}
   - {fileID: 435596264}
-  isRollOrEquip: 0
+  isRollOrEquip: 1
 --- !u!4 &1136580983
 Transform:
   m_ObjectHideFlags: 0
